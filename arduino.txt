@@ -20,7 +20,9 @@ int senal=0;
 int LED_ROJO = 15; // Este es d8
 
 void setup(){
+  
 Serial.begin(115200);
+Serial.println("\n") // Esto es para el Salto de Lineas en el Puerto Serie
 pinMode(lectura,INPUT);
 pinMode(LED_ROJO,OUTPUT);
 
@@ -30,6 +32,8 @@ server.on("/", handleRoot);
 server.begin();
 IPAddress myIP = WiFi.softAPIP();
 // Fin de la Configuración
+
+Serial.println(WiFi.localIP());
 
 }
 
