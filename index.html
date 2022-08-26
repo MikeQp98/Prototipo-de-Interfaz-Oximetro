@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5">
+    <meta name="viewport" content="width=device-width, user-scale=no">
+   
+    <title>Signos Vitales</title>
+</head> 
+
+<style>
+
+    body {
+        font-family: monospace;
+        background-color: green;
+    }
+
+    h1 {
+        color: white;
+        text-align: center;
+        margin: 50px;
+        font-size: 18px;
+    }
+
+    .barra__oxigeno   {
+        height: 200px;
+        width: 200px;
+        background-color: yellow;
+        margin: auto;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .cont {
+        height: 100px;  
+        width: 200px;
+    }
+
+    .circulo__centro {
+        width: 150px;
+        height: 150px;
+        background-color: green;
+        border-radius: 50%;
+        margin: auto;
+        position: relative;
+        margin: -175px auto 50px ;
+    }
+
+    .rectangulo__centro{
+        width: 200px;
+        height: 100px;
+        background-color: green;
+        position: relative;
+        margin: -125px auto 50px;
+    }
+
+</style>
+
+
+<body>
+
+    <h1>Visualización Signos Vitales</h1>
+  
+    <h1> Saturación de Oxigenos </h1> 
+
+        <!-- Sección de la Saturacion de Ogineno  -->
+    <div class="barra__oxigeno" style="transform: rotate(0deg);">
+        <div class="cont" style= "background-color: silver"></div>
+        <div class="cont" style= "background-color: red"></div>
+    </div>
+
+    <div class="circulo__centro"></div>
+    <div class="rectangulo__centro"></div>
+
+    <h1 style="font-size: 22px; position:relative; margin: -125px auto 50px;"> 97% SPO</h1>
+
+        <!-- Sección de las pulsaciones por Minuto  -->
+
+        <div class="barra__oxigeno" style="transform: rotate(0deg);">
+            <div class="cont" style= "background-color: silver"></div>
+            <div class="cont" style= "background-color: red"></div>
+        </div>
+    
+        <div class="circulo__centro"></div>
+        <div class="rectangulo__centro"></div>
+    
+        <h1 style="font-size: 22px; position:relative; margin: -125px auto 50px;"> 97% PPM</h1>
+
+        
+
+
+   
+</body>
+</html>

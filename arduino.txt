@@ -1,0 +1,58 @@
+
+//Librerias para conectar el modulo a una Red Wifi
+#include <ESP8266WiFi.h>;
+#include <WiFiClient.h>;
+#include <ESP8266WebServer.h>;
+
+
+//Credenciales de Acceso
+
+const char *ssid= "Signos_Vitales";
+const char *password ="perro";
+
+ESP8266WebServer server(80);
+
+
+int lectura=A0;
+int senal=0;
+
+
+int LED_ROJO = 15; // Este es d8
+
+void setup(){
+Serial.begin(115200);
+pinMode(lectura,INPUT);
+pinMode(LED_ROJO,OUTPUT);
+
+//Configuramos acá la Red Wifi de Nuestra Placa
+WiFi.softAP(ssid,password);
+server.on("/", handleRoot);
+server.begin();
+IPAddress myIP = WiFi.softAPIP();
+// Fin de la Configuración
+
+}
+
+
+void loop(){
+
+senal=analogRead(lectura);
+server.handleClient();
+
+
+Serial.println(senal);
+
+if(senal >= 700){
+digitalWrite(LED_ROJO,HIGH);
+}
+
+if(senal <= 699){
+digitalWrite(LED_ROJO,LOW);
+}
+
+delay(30);
+}
+
+void handleRoot() {
+  server.send(200, "text/html","<h1> Saturacion es : "+String(lectura)+"<h1>"
+}
